@@ -8,7 +8,10 @@ rect_color = (255, 0, 0)
 me = pygame.Rect(30, 30, 60, 60)
 
 # CREATING CANVAS
-screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
+screen_width=1280
+screen_height=720
+screen=pygame.display.set_mode([screen_width, screen_height])
+#screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
 window_width, window_height = screen.get_size()
 clock = pygame.time.Clock()
 
@@ -20,8 +23,7 @@ test_font = pygame.font.Font(None, 50)
 
 text_surface = test_font.render("hello", False, rect_color)
 
-test_surface = pygame.Surface((100, 200))
-test_surface.fill(rect_color)
+test_surface = pygame.image.load("assets/maps/home/base.png")
 
 """
 TODO: Get and test all key codes for console
