@@ -1,11 +1,11 @@
 import pygame
+from player import *
 from sys import exit
 
 pygame.init()
 
 color = (0, 0, 0)
 rect_color = (255, 0, 0)
-me = pygame.Rect(30, 30, 60, 60)
 
 # CREATING CANVAS
 screen_width=1280
@@ -33,6 +33,7 @@ TODO: Get and test all key codes for console
 def main():
     running = True
     print(window_width, window_height)
+    player = Player()
     while running:
         screen.fill(color)
 
@@ -44,10 +45,11 @@ def main():
                     running = False
                 print(f"Pressed: {event.key}")
 
-        pygame.draw.rect(screen, rect_color, me)
-
-        screen.blit(test_surface,(180, 20))
+        screen.blit(test_surface,(180, 0))
         #screen.blit(text_surface, (100, 100))
+
+        player.draw(screen)
+        player.handle_keys()
 
         pygame.display.update()
 
