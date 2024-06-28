@@ -3,7 +3,7 @@ from sys import exit
 
 pygame.init()
 
-color = (255, 255, 255)
+color = (0, 0, 0)
 rect_color = (255, 0, 0)
 me = pygame.Rect(30, 30, 60, 60)
 
@@ -24,6 +24,7 @@ test_font = pygame.font.Font(None, 50)
 text_surface = test_font.render("hello", False, rect_color)
 
 test_surface = pygame.image.load("assets/maps/home/base.png")
+test_surface = pygame.transform.scale(test_surface, (test_surface.get_width()*1.4, test_surface.get_height()*1.4))
 
 """
 TODO: Get and test all key codes for console
@@ -45,8 +46,8 @@ def main():
 
         pygame.draw.rect(screen, rect_color, me)
 
-        screen.blit(test_surface,(0, 0))
-        screen.blit(text_surface, (100, 100))
+        screen.blit(test_surface,(180, 20))
+        #screen.blit(text_surface, (100, 100))
 
         pygame.display.update()
 
